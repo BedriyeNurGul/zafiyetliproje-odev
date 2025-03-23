@@ -1,1 +1,0 @@
-# zafiyetliproje-odev

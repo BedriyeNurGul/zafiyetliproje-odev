@@ -1,0 +1,29 @@
+# zafiyetliproje-odev
+import sqlite3
+
+# Veritabanı oluştur
+conn = sqlite3.connect(":memory:")
+cursor = conn.cursor()
+
+# Kullanıcı tablosu oluştur
+cursor.execute("CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, password TEXT)")
+cursor.execute("INSERT INTO users (username, password) VALUES ('admin', 'admin123')")
+cursor.execute("INSERT INTO users (username, password) VALUES ('user1', 'pass1')")
+conn.commit()
+
+# Kullanıcıdan giriş bilgilerini al
+username = input("Kullanıcı Adı: ")
+password = input("Şifre: ")
+
+# Zafiyetli SQL sorgusu
+query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+
+cursor.execute(query)
+result = cursor.fetchone()
+
+if result:
+    print("Giriş başarılı! Hoş geldiniz,", result[1])
+else:
+    print("Giriş başarısız!")
+
+conn.close()
