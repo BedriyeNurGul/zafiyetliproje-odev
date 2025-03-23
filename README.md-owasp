@@ -1,0 +1,10 @@
+# SQL Injection Demonstrasyonu
+
+Bu proje, **SQL Injection** açığını gösteren ve daha sonra güvenli hale getirilen bir Python uygulamasıdır.
+
+## 💀 Zafiyetin OWASP Kategorisi:
+- **A03:2021 - Injection (SQL Injection)**  
+
+## 🛑 Zafiyetin CVSS Skoru:
+- **CVSS v3 Skoru: 9.8 (Critical)**  
+- **Vector String:** `CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H`
